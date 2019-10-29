@@ -17,6 +17,7 @@ class ViewController: UIViewController, CNContactPickerDelegate {
     @IBOutlet weak var withPrefixSwitch: UISwitch!
     @IBOutlet weak var withFlagSwitch: UISwitch!
     @IBOutlet weak var withExamplePlaceholderSwitch: UISwitch!
+    @IBOutlet weak var withDefaultPickerUISwitch: UISwitch!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,10 @@ class ViewController: UIViewController, CNContactPickerDelegate {
         if !textField.withExamplePlaceholder {
             textField.placeholder = "Enter phone number"
         }
+    }
+
+    @IBAction func withDefaultPickerUIDidChange(_ sender: Any) {
+        textField.withDefaultPickerUI = withDefaultPickerUISwitch.isOn
     }
 }
 
